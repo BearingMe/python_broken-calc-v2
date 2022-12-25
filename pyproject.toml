@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "broken-calc"
+version = "0.1.0"
+description = ""
+authors = ["Bruno Gomes <gomes.bruno201@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "broken_calc"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pywebview = "^3.7.2"
+flask = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
