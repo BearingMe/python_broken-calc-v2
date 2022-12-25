@@ -1,3 +1,62 @@
-#example {
-    font-size: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
+
+.container {
+    display: grid;
+    grid-template-rows: 0.6fr 1fr;
+    height: 100vh;
+    background-color: #121212f2;
+}
+
+.screen {
+    position: relative;
+}
+
+.screen > .result {
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 2.3rem;
+    padding-right: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2px !important;
+
+}
+
+.buttonGrid > .btn {
+    color: white;
+    outline: none;
+    border: none;
+    margin: 1px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.buttonGrid > .btn:nth-child(-n + 2) {
+    font-size: 12px;
+}
+
+.buttonGrid > .btn:nth-child(19) {
+    background-color: #00af9dd8;
+}
+
+.buttonGrid > .btn-number {
+    background-color: #ffffff22;
+}
+
+.buttonGrid > .btn-symbol {
+    background-color: #ffffff14;
+}
+

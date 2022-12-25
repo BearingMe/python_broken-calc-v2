@@ -1,26 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <div id="example">
-    HELLO WORLD
-
-    <button id="press">
-        Press me
-    </button>
-    </div>
+    <main class="container">
+        <div class="screen">
+            <span class="result">0</span>
+        </div>
+        <div class="buttonGrid"></div>
+    </main>   
 
     <script>
-        const press = document.getElementById('press');
-        
-        press.addEventListener('click', () => {
-            pywebview.api.calc("3 + 4").then(console.log)
-        });
+        window.onload = function() {
+            const symbol = [
+               '(',  ')','C',  '<', 
+                 7,    8,  9,  '÷',
+                 4,    5,  6,  'x',
+                 1,    2,  3,  '-',
+               '.',    0,  '=','+']
+
+
+            const buttonGrid = document.querySelector('.buttonGrid')
+
+            for (let i = 0; i < symbol.length; i++) {
+                const button = document.createElement('button')
+                
+                typeof symbol[i] === 'number' 
+                    ? button.classList.add('btn-number')
+                    : button.classList.add('btn-symbol')
+
+                button.classList.add('btn')
+                
+                button.innerHTML = symbol[i]
+                
+                buttonGrid.appendChild(button)
+            }
+        }
     </script>
 </body>
 </html>
